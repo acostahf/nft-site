@@ -2,18 +2,171 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
 body {
-	padding: 0;
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Nunito", sans-serif;
+  background-color: rgb(59 130 246 / 0.5);
+  color: #fff;
+  overflow-x: hidden;
 }
 
-a {
-	color: inherit;
-	text-decoration: none;
+
+.swipeBtn {
+  transition: all 1s;
+  position: relative;
+  z-index: 1;
 }
 
-* {
-	box-sizing: border-box;
+
+.swipeBtn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgb(184, 2, 144);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transform: translateY(100%);
+  transition: all 1s;
+  overflow: hidden;
+  /* transform-origin: left;
+  transform: translate(500px); */
+}
+
+.swipeBtn:hover::before {
+  transform: translateX(0);
+}
+
+.swipeBtn:hover {
+  color: white;
+}
+
+
+
+/* Hamburger Menu */
+.hamburger {
+    cursor: pointer;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+  }
+  
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+  
+  .hamburger-middle {
+    transform: translateY(7px);
+  }
+  
+  .hamburger-bottom {
+    transform: translateY(14px);
+  }
+  
+  .open {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+  }
+  
+  .open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+  }
+  
+  .open .hamburger-middle {
+    display: none;
+  }
+  
+  .open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+  }
+
+
+.waves{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+}
+
+.wave{
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100px;
+  background-image: url('./assets/wave.png');
+  background-size: 1000px 100px;
+}
+
+.wave#wave1{
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWave 12s linear infinite;
+}
+
+ .wave#wave2{
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animateWave_02 12s linear infinite;
+}
+
+ .wave#wave3{
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWave 9s linear infinite;
+}
+
+ .wave#wave4{
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animateWave_02 9s linear infinite;
+}
+
+@keyframes animateWave{
+  0%
+  {
+      background-position-x: 1000px;
+  }
+  100%
+  {
+      background-position-x: 0px;
+  }
+}
+
+@keyframes animateWave_02{
+  0%
+  {
+      background-position-x: 0px;
+  }
+  100%
+  {
+      background-position-x: 1000px;
+  }
+}
+
+
+.teamDiv {
+  background-color: rgb(59 130 246 / 0.5);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+  grid-gap: 20px;
 }
