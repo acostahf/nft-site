@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Footer from "../components/Footer";
 import Hero from '../components/Hero'
 import Navbar from '../components/Navbar'
 import Team from "../components/Team";
@@ -11,6 +12,7 @@ export default function Home() {
         	<Hero />
 			<Team />
 			<Timeline />
+			<Footer />
 		</div>
 	);
 }
