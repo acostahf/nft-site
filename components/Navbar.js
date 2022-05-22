@@ -1,7 +1,22 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-function Navbar({ accounts, setAccounts }) {
+const navLinks = [
+	{
+		name: "Mint",
+		url: "/mint",
+	},
+	{
+		name: "Home",
+		url: "/home",
+	},
+	{
+		name: "Roadmap",
+		url: "/home",
+	},
+];
+
+const Navbar = ({ accounts, setAccounts }) => {
 	const isConnected = Boolean(accounts[0]);
 	const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
@@ -27,23 +42,15 @@ function Navbar({ accounts, setAccounts }) {
 					<h1 className="logo text-2xl font-bold text-indigo-500">NFT</h1>
 				</div>
 				{/* MENU */}
-				<div className="hidden md:flex space-x-6">
-					<Link href="/home">
-						<a className="hover:text-slate-400 font-semibold">Home</a>
-					</Link>
-					<Link href="/home">
-						<a className="hover:text-slate-400 font-semibold">About</a>
-					</Link>
-					<Link href="/home">
-						<a className="hover:text-slate-400 font-semibold">Roadmap</a>
-					</Link>
-					<Link href="/home">
-						<a className="hover:text-slate-400 font-semibold">Showcase</a>
-					</Link>
-					<Link href="/home">
-						<a className="hover:text-slate-400 font-semibold">Team</a>
-					</Link>
-				</div>
+				<ul className="hidden md:flex space-x-6">
+					{navLinks.map((nav, i) => (
+						<li key={i}>
+							<Link href="/" passHref>
+								<a className="hover:text-slate-400 font-semibold">{nav.name}</a>
+							</Link>
+						</li>
+					))}
+				</ul>
 				{/*Connect Wallet BUTTON */}
 				{isConnected ? (
 					<p className="swipeBtn overflow-hidden hidden md:block p-3 px-6 pt-2 rounded-full border-2 border-black ">Connected</p>
@@ -71,22 +78,15 @@ function Navbar({ accounts, setAccounts }) {
 							: "flex-col absolute h-screen w-full items-center self-end flex py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 z-10 drop-shadow-md"
 					}
 				>
-					<Link href="/home">
-						<a>Home</a>
-					</Link>
-					<Link href="/home">
-						<a>About</a>
-					</Link>
-					<Link href="/home">
-						<a>Showcase</a>
-					</Link>
-					<Link href="/home">
-						<a>Roadmap</a>
-					</Link>
+					{navLinks.map((nav, i) => (
+						<Link key={i} href={nav.url}>
+							<a>{nav.name}</a>
+						</Link>
+					))}
 				</div>
 			</div>
 		</div>
 	);
-}
+};
 
 export default Navbar;
