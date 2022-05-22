@@ -16,7 +16,7 @@ contract Mugs is ERC721, ERC721Enumerable, Ownable {
     bool public isAllowListActive = false;
     uint256 public constant MAX_SUPPLY = 1000;
     uint256 public constant MAX_PUBLIC_MINT = 5; 
-    uint256 public constant PRICE_PER_TOKEN = 0.1 ether;
+    uint256 public constant PRICE_PER_TOKEN = 0 ether;
 
     mapping(address => uint8) private _allowList;
 
@@ -60,10 +60,20 @@ contract Mugs is ERC721, ERC721Enumerable, Ownable {
     }
 
 
+    function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal override(ERC721, ERC721Enumerable) {
+        super._beforeTokenTransfer(from, to, tokenId);
+    }
+
+    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721, ERC721Enumerable) returns (bool) {
+        return super.supportsInterface(interfaceId);
+    }
+
+
+
    function mint(uint8 numberOfTokens) external payable {
         uint256 ts = totalSupply();
         require(saleIsActive, "Allow list is not active or check mintAllowList func");
-        require(numberOfTokens <= MAX_PUBLIC_MINT[msg.sender], "You want too many!");
+        require(numberOfTokens <= MAX_PUBLIC_MINT, "You want too many!");
         require(ts + numberOfTokens <= MAX_SUPPLY, "Your wallet has met the max ammount");
         require(PRICE_PER_TOKEN * numberOfTokens <= msg.value, "Ether value sent is not enough");
 
@@ -79,19 +89,19 @@ contract Mugs is ERC721, ERC721Enumerable, Ownable {
 
     //Function for withdraw
 
-    function pause() public onlyOwner {
-        _pause();
-    }
+    // function pause() public onlyOwner {
+    //     _pause();
+    // }
 
-    function unpause() public onlyOwner {
-        _unpause();
-    }
+    // function unpause() public onlyOwner {
+    //     _unpause();
+    // }
 
-    function _beforeTokenTransfer(address from, address to, uint256 tokenId)
-        internal
-        whenNotPaused
-        override
-    {
-        super._beforeTokenTransfer(from, to, tokenId);
-    }
+    // function _beforeTokenTransfer(address from, address to, uint256 tokenId)
+    //     internal
+    //     whenNotPaused
+    //     override
+    // {
+    //     super._beforeTokenTransfer(from, to, tokenId);
+    // }
 }
