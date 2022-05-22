@@ -1,13 +1,16 @@
-import React from 'react'
-import Navbar from './Navbar'
+import React from "react";
+import Navbar from "./Navbar";
+
+import { useState } from "react";
 
 function Layout({ children }) {
-  return (
-    <div className='content'>
-        <Navbar />
-        {children}
-    </div>
-  )
+	const [accounts, setAccounts] = useState([]);
+	return (
+		<div className="content">
+			<Navbar accounts={accounts} setAccounts={setAccounts} />
+			{children}
+		</div>
+	);
 }
 
-export default Layout
+export default Layout;
