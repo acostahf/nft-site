@@ -55,7 +55,7 @@ const Navbar = ({ accounts, setAccounts }) => {
 				{isConnected ? (
 					<p className="swipeBtn overflow-hidden hidden md:block p-3 px-6 pt-2 rounded-full border-2 border-black ">Connected</p>
 				) : (
-					<button onClick={connectAccount} className="swipeBtn overflow-hidden hidden md:block p-3 px-6 pt-2 rounded-full border-2 border-black ">
+					<button onClick={connectAccount} className="simpleBtn z-10 overflow-hidden hidden md:block p-3 px-6 pt-2  rounded-xl   ">
 						Connect Wallet
 					</button>
 				)}
@@ -75,7 +75,7 @@ const Navbar = ({ accounts, setAccounts }) => {
 					className={
 						!hamburgerOpen
 							? "hidden"
-							: "flex-col absolute h-screen w-full items-center self-end flex py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 z-10 drop-shadow-md"
+							: "flex-col absolute h-screen w-full items-center self-end flex py-8 mt-10 space-y-6 font-bold bg-white text-black sm:w-auto sm:self-center left-6 right-6 z-[1000] drop-shadow-md"
 					}
 				>
 					{navLinks.map((nav, i) => (
