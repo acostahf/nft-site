@@ -14,6 +14,10 @@ const navLinks = [
 		name: "Roadmap",
 		url: "/home",
 	},
+	{
+		name: "Team",
+		url: "/home",
+	},
 ];
 
 const Navbar = ({ accounts, setAccounts }) => {
@@ -75,7 +79,7 @@ const Navbar = ({ accounts, setAccounts }) => {
 					className={
 						!hamburgerOpen
 							? "hidden"
-							: "flex-col absolute h-screen w-full items-center self-end flex py-8 mt-10 space-y-6 font-bold bg-white text-black sm:w-auto sm:self-center left-6 right-6 z-[1000] drop-shadow-md"
+							: "flex-col absolute h-screen w-full items-center self-end flex py-8 mt-10 space-y-6 font-bold bg-white  text-black sm:w-auto sm:self-center left-6 right-6 z-[1000] drop-shadow-md"
 					}
 				>
 					{navLinks.map((nav, i) => (

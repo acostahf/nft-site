@@ -5,7 +5,7 @@ function Team() {
   return (
       <>
        {/* HEADING */}
-      <h2 className='text-4xl font-bold text-center'>Meet the team</h2>
+      <h2 className='text-4xl md:text-6xl font-bold text-center'>Meet the team</h2>
      
     <div className='max-w-6x; px-5 mx-auto pt-20  text-center md:h-screen h-[1500px] teamDiv flex justify-evenly'>
        
