@@ -22,9 +22,9 @@ function Team() {
                         <h2 className='card-title'>Fabian, CEO</h2>
                             <p className='card-body pb-8 '>Contact through one of these social medias</p>
                             <div className='flex flex-row justify-around'>
-                                <BeakerIcon className="h-5 w-5 text-blue-500"/>
-                                <BeakerIcon className="h-5 w-5 text-blue-500"/>
-                                <BeakerIcon className="h-5 w-5 text-blue-500"/>
+                                <BeakerIcon className="h-5 w-5 text-blue-500 cursor-pointer "/>
+                                <BeakerIcon className="h-5 w-5 text-blue-500 cursor-pointer"/>
+                                <BeakerIcon className="h-5 w-5 text-blue-500 cursor-pointer"/>
                             </div>
                             
                     </div>
@@ -43,9 +43,9 @@ function Team() {
                     <h2 className='card-title'>Daena, CFO</h2>
                     <p className='card-body pb-8 '>Contact through one of these social medias</p>
                             <div className='flex flex-row justify-around'>
-                                <BeakerIcon className="h-5 w-5 text-blue-500"/>
-                                <BeakerIcon className="h-5 w-5 text-blue-500"/>
-                                <BeakerIcon className="h-5 w-5 text-blue-500"/>
+                            <BeakerIcon className="h-5 w-5 text-blue-500 cursor-pointer "/>
+                                <BeakerIcon className="h-5 w-5 text-blue-500 cursor-pointer"/>
+                                <BeakerIcon className="h-5 w-5 text-blue-500 cursor-pointer"/>
                             </div>
                     </div>
                     </div>
@@ -67,9 +67,9 @@ function Team() {
                     <h2 className='card-title'>Christian, C3PO</h2>
                     <p className='card-body pb-8 '>Contact through one of these social medias</p>
                             <div className='flex flex-row justify-around'>
-                                <BeakerIcon className="h-5 w-5 text-blue-500"/>
-                                <BeakerIcon className="h-5 w-5 text-blue-500"/>
-                                <BeakerIcon className="h-5 w-5 text-blue-500"/>
+                            <BeakerIcon className="h-5 w-5 text-blue-500 cursor-pointer "/>
+                                <BeakerIcon className="h-5 w-5 text-blue-500 cursor-pointer"/>
+                                <BeakerIcon className="h-5 w-5 text-blue-500 cursor-pointer"/>
                             </div>
                     </div>
                     </div>
@@ -87,9 +87,9 @@ function Team() {
                     <h2 className='card-title'>Artist, CAIO</h2>
                     <p className='card-body pb-8 '>Contact through one of these social medias</p>
                             <div className='flex flex-row justify-around'>
-                                <BeakerIcon className="h-5 w-5 text-blue-500"/>
-                                <BeakerIcon className="h-5 w-5 text-blue-500"/>
-                                <BeakerIcon className="h-5 w-5 text-blue-500"/>
+                            <BeakerIcon className="h-5 w-5 text-blue-500 cursor-pointer "/>
+                                <BeakerIcon className="h-5 w-5 text-blue-500 cursor-pointer"/>
+                                <BeakerIcon className="h-5 w-5 text-blue-500 cursor-pointer"/>
                             </div>
                     </div>
                     </div>
