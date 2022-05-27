@@ -10,9 +10,19 @@ body {
   background-color: rgb(59 130 246 / 0.5);
   color: #fff;
   overflow-x: hidden;
+  /* background-image: linear-gradient(rgb(59 130 246 / 0.5), #3586FF); */
+  /* background: linear-gradient(180deg, rgb(59 130 246 / 0.5) 50%, #3586FF 100%); */
+  
 }
 
+.hero {
+  /* background: linear-gradient(to bottom, rgb(59 130 246 / 0.5) 0%,rgb(59 130 246 / 0.5) 100%,rgb(59 130 246 / 0.5) 50%,#3586FF 50%,#3586FF 100%); */
+}
+#grad {
+  background-image: linear-gradient(rgb(59 130 246 / 0.5), #3586FF);
+}
 
+/* background: linear-gradient(180deg, rgb(59 130 246 / 0.5) 50%, #3586FF 100%); */
 .swipeBtn {
   transition: all 1s;
   position: relative;
@@ -52,10 +62,54 @@ body {
 }
 
 .simpleBtn:hover {
-  color: black;
+  color: rgb(124, 124, 124);
   background-color: white;
 }
 
+.growingBtn {
+  border: none;
+  padding: 12px 20px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+
+
+.growingBtn::before {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: -5px;
+  left: -5px;
+  border-top: 2px solid red;
+  border-left: 2px solid red;
+  transition: all 0.25s;
+}
+
+.growingBtn:hover::before {
+  height: 100%;
+  width: 100%;
+}
+
+.growingBtn::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  bottom: -5px;
+  right: -5px;
+  border-bottom: 2px solid red;
+  border-right: 2px solid red;
+  transition: all 0.25s;
+}
+
+.growingBtn:hover::after {
+  height: 100%;
+  width: 100%;
+}
 
 
 /* Hamburger Menu */

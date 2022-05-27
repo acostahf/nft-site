@@ -48,9 +48,9 @@ const Navbar = ({ accounts, setAccounts }) => {
 				{/* MENU */}
 				<ul className="hidden md:flex space-x-6">
 					{navLinks.map((nav, i) => (
-						<li key={i}>
-							<Link href="/" passHref>
-								<a className="hover:text-slate-400 font-semibold">{nav.name}</a>
+						<li className="hover:text-slate-50 font-semibold cursor-pointer z-10" key={i}>
+							<Link  href="/" passHref>
+								<a className="hover:text-slate-400 font-semibold cursor-pointer z-10">{nav.name}</a>
 							</Link>
 						</li>
 					))}
@@ -84,7 +84,7 @@ const Navbar = ({ accounts, setAccounts }) => {
 				>
 					{navLinks.map((nav, i) => (
 						<Link key={i} href={nav.url}>
-							<a>{nav.name}</a>
+							<a className="cursor-pointer z-10">{nav.name}</a>
 						</Link>
 					))}
 				</div>
