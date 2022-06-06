@@ -70,7 +70,10 @@ function unHideItems(itemNum) {
 
 
   return (
-    <section className="timeline">
+    <>
+    {/* HEADING */}
+    <h2 className='text-4xl md:text-6xl font-bold text-center '>Roadmap</h2>
+    <section className="timeline pt-20">
   <ul>
     <li ref={firstRef} className={inView1 ? 'in-view' : 'not-in-view'}>
       <div>
@@ -94,6 +97,7 @@ function unHideItems(itemNum) {
    
   </ul>
 </section>
+</>
   )
 }
 

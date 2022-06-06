@@ -14,6 +14,10 @@ const navLinks = [
 		name: "Roadmap",
 		url: "/home",
 	},
+	{
+		name: "Team",
+		url: "/home",
+	},
 ];
 
 const Navbar = ({ accounts, setAccounts }) => {
@@ -44,9 +48,9 @@ const Navbar = ({ accounts, setAccounts }) => {
 				{/* MENU */}
 				<ul className="hidden md:flex space-x-6">
 					{navLinks.map((nav, i) => (
-						<li key={i}>
-							<Link href="/" passHref>
-								<a className="hover:text-slate-400 font-semibold">{nav.name}</a>
+						<li className="hover:text-slate-50 font-semibold cursor-pointer z-10" key={i}>
+							<Link  href="/" passHref>
+								<a className="hover:text-slate-400 font-semibold cursor-pointer z-10">{nav.name}</a>
 							</Link>
 						</li>
 					))}
@@ -55,7 +59,7 @@ const Navbar = ({ accounts, setAccounts }) => {
 				{isConnected ? (
 					<p className="swipeBtn overflow-hidden hidden md:block p-3 px-6 pt-2 rounded-full border-2 border-black ">Connected</p>
 				) : (
-					<button onClick={connectAccount} className="swipeBtn overflow-hidden hidden md:block p-3 px-6 pt-2 rounded-full border-2 border-black ">
+					<button onClick={connectAccount} className="simpleBtn z-10 overflow-hidden hidden md:block p-3 px-6 pt-2  rounded-xl   ">
 						Connect Wallet
 					</button>
 				)}
@@ -75,12 +79,12 @@ const Navbar = ({ accounts, setAccounts }) => {
 					className={
 						!hamburgerOpen
 							? "hidden"
-							: "flex-col absolute h-screen w-full items-center self-end flex py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 z-10 drop-shadow-md"
+							: "flex-col absolute h-screen w-full items-center self-end flex py-8 mt-10 space-y-6 font-bold bg-white  text-black sm:w-auto sm:self-center left-6 right-6 z-[1000] drop-shadow-md"
 					}
 				>
 					{navLinks.map((nav, i) => (
 						<Link key={i} href={nav.url}>
-							<a>{nav.name}</a>
+							<a className="cursor-pointer z-10">{nav.name}</a>
 						</Link>
 					))}
 				</div>
